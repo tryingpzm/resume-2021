@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>在线简历</title>
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_908787_kekc8lrkg7e.css">
+    <style>
+        /*css reset*/
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        /*common css  */
+        .pill {
+            background: #000;
+            color: #fff;
+            display: inline-block;
+            font-size: 14px;
+            width: 140px;
+            line-height: 20px;
+            text-align: center;
+            border-radius: 20px;;
+        }
+
+        .layout {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .clearfix::after {
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        /* page css*/
+        body {
+            font: 16px/1.5 SimSun, STKaiti, "Microsoft YaHei", SimHei, Helvetica, Arial;
+            color: #333;
+        }
+
+        .wrapper {
+            background-color: #ececec;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            padding-top: 40px;
+            padding-bottom: 20px;
+        }
+
+        .aside {
+            float: left;
+            width: 280px;
+        }
+
+        .aside .user {
+            text-align: center;
+            padding-bottom: 20px;
+        }
+
+        .aside .user h1{
+            font-size: 40px;
+        }
+
+        .aside .user h1::after {
+            content: '';
+            display: block;
+            width: 60px;
+            border-top: 1px solid #d6d6d6;
+            margin: 16px auto;
+        }
+
+        .aside .user::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            margin-top: 20px;
+            border-top: 20px solid #d6d6d6;
+            border-bottom: 20px solid transparent;
+            border-right: 140px solid #d6d6d6;
+            border-left: 140px solid transparent;
+        }
+
+        .aside .contact {
+            padding: 20px;
+        }
+
+        .aside .contact li {
+            border-bottom: 1px solid #d6d6d6;
+            list-style: none;
+            line-height: 40px;
+        }
+
+        .aside .contact .iconfont {
+            border-right: 1px solid #d6d6d6;
+            padding-right: 10px;
+            margin-right: 10px;
+            padding-left: 10px;
+            display: inline-block;
+            font-size: 20px;
+            color: #7bbaaa;
+        }
+
+        .aside .skills {
+            background: #7bbaaa;
+            padding: 20px;
+            color: #fff;
+        }
+
+        .aside .skills dt {
+            color: #eee;
+            margin-top: 20px;
+        }
+
+        .aside .skills dd {
+            height: 4px;
+            background: #74c5b5;
+            border-radius: 2px;
+            margin-top: 10px;
+        }
+
+        .aside .skills .mastery {
+            height: 4px;
+            background: #fff;
+            display: block;
+            border-radius: 2px;
+        }
+
+        .aside .others h2 {
+            margin: 20px 0 0 20px;
+        }
+
+        .main {
+            margin-left: 280px;
+            background: #fff;
+            padding: 40px;
+            margin-right: 20px;
+        }
+
+        .main .intro {
+            overflow: auto;
+        }
+        .main .intro img {
+            width: 80px;
+            height: 80px;
+            float: left;
+        }
+
+        .main .intro p {
+            margin-left: 120px;
+        }
+
+        .section {
+        }
+
+        .section .pill {
+            float: left;
+            margin-top: 5px;
+        }
+
+        .section h2{
+            font-size: 40px;
+            color: #d9d9d9;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .section .more {
+            margin-left: 150px;
+            border-left: 1px solid #eee;
+        }
+        .section h3 {
+            color: #666;
+            font-size: 20px;
+            font-weight: normal;
+        }
+        .section h3 strong{
+            color: #111;
+            font-weight: bold;
+        }
+
+        .section h3::before {
+            content: '';
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            border-radius: 6px;
+            border: 2px solid #7bbaaa;
+            margin-right: 20px;
+            position: relative;
+            left: -5px;
+        }
+
+        .section h4 {
+            color: #111;
+            margin-top: 20px;
+            margin-left: 40px;
+        }
+
+
+        .section .more ul {
+            margin-left: 50px;
+            padding-bottom: 20px;
+        }
+        .section .more li {
+            color: #666;
+            font-size: 14px;
+        }
+
+
+        @media print {
+            .aside {
+                width: 200px;
+            }
+            .main {
+                margin-left: 200px;
+            }
+            .aside .user::after {
+                border-right-width: 100px;
+                border-left-width: 100px;
+            }
+            .pill {
+                display: none;
+            }
+
+            .section .more {
+                margin-left: 20px;
+            }
+
+            .wrapper {
+                margin: 0;
+            }
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+<div class="wrapper layout clearfix">
+    <div class="aside">
+        <div class="user">
+            <h1>彭志明</h1>
+            <p>应聘前端工程师</p>
+        </div>
+        <ul class="contact">
+            <li><span class="iconfont icon-email"></span> b717864916@gmail.com</li>
+            <li><span class="iconfont icon-phone"></span> 18664366385</li>
+            <li><span class="iconfont icon-experience"></span> 3年前端经验</li>
+            <li><span class="iconfont icon-education"></span> 本科</li>
+        </ul>
+        <div class="skills">
+            <h2>我的技能</h2>
+            <dl>
+                <dt>JavaScript/HTML5/CSS3/SVG</dt>
+                <dd><span class="mastery" style="width: 90%"></span></dd>
+                <dt>Vue2.0/Vue3.0/Vuex/Vue-router</dt>
+                <dd><span class="mastery" style="width: 80%"></span></dd>
+<!--                <dt>Node.js</dt>-->
+<!--                <dd><span class="mastery" style="width: 50%"></span></dd>-->
+                <dt>Webpack</dt>
+                <dd><span class="mastery" style="width: 70%"></span></dd>
+                <dt>ES6/Sass</dt>
+                <dd><span class="mastery" style="width: 70%"></span></dd>
+            </dl>
+        </div>
+<!--        <div class="others">-->
+<!--            <h2>其他</h2>-->
+<!--            <ul class="contact">-->
+<!--                <li><span class="iconfont icon-github"></span> <a href="https://jirengu.com">Github</a></li>-->
+<!--                <li><span class="iconfont icon-blog"></span> <a href="https://jirengu.com">博客</a></li>-->
+<!--                <li><span class="iconfont icon-zhihu"></span> <a href="https://jirengu.com">知乎</a></li>-->
+<!--            </ul>-->
+<!--        </div>-->
+    </div>
+    <div class="main">
+        <div class="intro clearfix">
+            <img src="https://i.loli.net/2021/02/21/kgxnAFdHKZOVezu.jpg" alt="">
+            <p>3年前端开发经验，熟悉Vue技术栈，熟悉模块化、工程化开发流程，了解Webpack配置，熟练使用ES6写代码，有支付宝小程序开发经验</p>
+        </div>
+        <div class="education section">
+            <h2>教育经历</h2>
+            <div class="item">
+                <div class="left pill">09/2012 - 07/2016</div>
+                <div class="more">
+                    <h3><strong>武汉大学本科</strong></h3>
+                </div>
+            </div>
+            <div class="experience section">
+                <h2>工作经历</h2>
+                <div class="detail">
+                    <div class="left pill">10/2017 - 现在</div>
+                    <div class="more">
+                        <h3><strong>广州智友网络科技有限公司</strong>, 前端开发工程师</h3>
+                        <ul>
+                            <li>工作期间参与开发和维护促销宝，包括PC、移动端支付宝小程序</li>
+                            <li>公司前端UI组件库的编写与维护</li>
+                        </ul>
+<!--                        <h4>写代码啦课程平台Web端项目</h4>-->
+<!--                        <ul>-->
+<!--                            <li><strong>项目介绍：</strong> 该项目的目的是搭建线上学习平台，把线下课堂的完整学习流程搬到线上，平台包括课程展示、购买、直播、录播、作业、权限管理、停课复课、试听等几十个大功能。该项目采用前后分离的技术方案，-->
+<!--                                我主要负责前端部分的开发。项目前端部分使用Vue技术栈，移动端平台使用自己实现的vue ui组件库。</li>-->
+<!--                            <li><strong>技术栈：</strong>vue、vue-router、vuex、element-ui、typescript、webpack、es6、移动端</li>-->
+<!--                            <li><strong>项目成果:</strong> 项目支撑饥人谷日常教学活动、运营活动的正常开展，支持数千学生的日常线上学习，几十万用户的日常访问。</li>-->
+<!--                        </ul>-->
+
+<!--                        <h4>写代码啦课程平台小程序项目</h4>-->
+<!--                        <ul>-->
+<!--                            <li><strong>项目介绍：</strong> 该项目是线上学习平台的小程序版本，拥有web版本的绝大多数的功能，如课程分类、搜索、任务学习、直播等。项目使用mpvue作为开发的主要框架，目前小程序已发布。</li>-->
+<!--                            <li><strong>技术栈：</strong>mpvue/vue/vuex/webpack/es6</li>-->
+<!--                            <li><strong>项目成果:</strong>大大提升了移动端学习体验，获得学生用户的多次好评，为微信端运营提供技术支撑</li>-->
+<!--                        </ul>-->
+
+
+                    </div>
+                </div>
+            </div>
+            <div class="projects section">
+                <h2>项目经历</h2>
+                <div class="item">
+                    <div class="left pill">02/2018 - 04/2018</div>
+                    <div class="more">
+                        <h3>水印编辑器</h3>
+                        <ul>
+                            <li><strong>项目介绍：</strong> 用户可通过本编辑器自定义商品水印。
+                                <ul>
+                                    <li>功能：前端主要实现元素的旋转、平移、伸缩过程中的元素（<strong>其中元素可以是普通、炫彩文本、图片、SVG裁剪图</strong>）的位置、大小变化；以及成组后操作的相对绝对坐标转换；鼠标框选元素等功能</li>
+                                    <li>
+                                        公用：本项目核心的渲染功能独立抽出为库发布至公司私有NPM域下，方便支持一套数据同时在移动端（REM）以及PC端渲染；
+                                    </li>
+                                    <li>难点：本项目主要难点为旋转之后再放大缩小时的坐标计算，以及成组、拆分组过程中相对坐标、绝对坐标的转换问题</li>
+                                </ul>
+                            </li>
+                            <li><strong>技术栈：</strong>vue、vue-router、vuex、、webpack、es6</li>
+<!--                            <li><strong>项目源码:</strong><a href="https://jirengu.com" target="_blank">github.com/jirengu</a></li>-->
+                            <li><strong>预览项目:</strong><a href="https://pm.cxb123.com/imgeditor/index.html?auth=eyJiYXNlQ29uZmlnIjp7ImVkaXRvclR5cGUiOiJXQVRFUk1BUksiLCJ3aWR0aCI6WzgwMF0sImhlaWdodCI6WzgwMF0sImNvbW1vbkFkbWluIjp0cnVlLCJ3YXRlcm1hcmtUeXBlIjoiSVRFTV9JTUciLCJ0ZW1wbGF0ZUlkIjpudWxsfSwiY3JlYXRlVXJsIjoiL2FwaS93YXRlcm1hcmstZWRpdG9yL2g1L2NyZWF0ZSIsImhpZGVSZXBsYWNlIjp0cnVlfQ==" target="_blank">点击查看</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="left pill">09/2018 - 02/2019</div>
+                    <div class="more">
+                        <h3>公司通用组件库编写</h3>
+                        <ul>
+                            <li><strong>项目介绍：</strong> 为方便快速复用，编写公司通用轮子；主要包括switch、tabs、pagination、form、layer、date-picker等等
+                            <li><strong>技术栈：</strong>vue、vue-router、vuex、element-ui、webpack、es6</li>
+                            <li><strong>预览项目:</strong><a href="" target="_blank">点击查看</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="left pill">06/2019 - 10/2019</div>
+                    <div class="more">
+                        <h3>支付宝小程序-促销宝</h3>
+                        <ul>
+                            <li><strong>项目介绍：</strong> 公司主要项目搬迁至支付宝小程序。
+                                <ul>
+                                    <li>主要实现：水印模块及编辑器移动端化</li>
+                                    <li>问题与解决：小程序中移动等相关事件支持性有限；故采用web-view内嵌移动端网页方式实现水印编辑器（REM)</li>
+                                </ul>
+                            </li>
+                            <li><strong>技术栈：</strong>AXML、ACSS、SJS</li>
+                        </ul>
+                    </div>
+                </div>
+<!--                <div class="item">-->
+<!--                    <div class="left pill">02/2018 - 08/2018</div>-->
+<!--                    <div class="more">-->
+<!--                        <h3>easyui一款简易vue ui组件库</h3>-->
+<!--                        <ul>-->
+<!--                            <li><strong>项目介绍：</strong> 为什么做这个项目(解决了什么问题)，提供了哪些功能。我在项目中承担的角色，用到了哪些技术，做了过程中遇到了什么问题，你是如何解决的，在代码复用性、体验、性能、ui上做了哪些优化</li>-->
+<!--                            <li><strong>技术栈：</strong>vue、vue-router、vuex、element-ui、webpack、es6</li>-->
+<!--                            <li><strong>项目源码:</strong><a href="https://jirengu.com" target="_blank">github.com/jirengu</a></li>-->
+<!--                            <li><strong>预览项目:</strong><a href="https://jirengu.com" target="_blank">点击查看</a></li>-->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!--                </div>-->
+            </div>
+            <div class="about-me section">
+                <h2>个人评价</h2>
+                <p>热爱技术，渴求进步，喜欢承担有技术难度的工作</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
